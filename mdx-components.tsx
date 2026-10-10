@@ -6,11 +6,6 @@ const components: MDXComponents = {
       {children}
     </a>
   ),
-  code: ({ children, ...props }) => (
-    <code className="i-code" {...props}>
-      {children}
-    </code>
-  ),
 };
 
 export function useMDXComponents(): MDXComponents {
