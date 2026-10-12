@@ -30,10 +30,10 @@ export function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+// Following Icons are from SVGRepo. Collection: Coolicons Line Oval Icons/
 export function ArrowLeft(props: React.SVGProps<SVGSVGElement>) {
   const titleId = useId();
   return (
-    // Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools
     <svg viewBox="0 0 24 24" stroke="currentColor" aria-labelledby={titleId} {...props}>
       <title id={titleId}>Back</title>
       <path
@@ -49,7 +49,6 @@ export function ArrowLeft(props: React.SVGProps<SVGSVGElement>) {
 export function Moon(props: React.SVGProps<SVGSVGElement>) {
   const titleId = useId();
   return (
-    // Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools
     <svg viewBox="0 0 24 24" fill="currentColor" aria-labelledby={titleId} {...props}>
       <title id={titleId}>Dark Mode</title>
       <path
@@ -65,7 +64,6 @@ export function Moon(props: React.SVGProps<SVGSVGElement>) {
 export function Sun(props: React.SVGProps<SVGSVGElement>) {
   const titleId = useId();
   return (
-    // Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools
     <svg viewBox="0 0 24 24" fill="currentColor" aria-labelledby={titleId} {...props}>
       <title id={titleId}>Light Mode</title>
       <path
@@ -80,13 +78,28 @@ export function Sun(props: React.SVGProps<SVGSVGElement>) {
 
 export function Hamburger(props: React.SVGProps<SVGSVGElement>) {
   const titleId = useId();
-  // Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-labelledby={titleId} {...props}>
       <title id={titleId}>Menu</title>
       <path
         id="Vector"
         d="M5 17H19M5 12H19M5 7H19"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function Close(props: React.SVGProps<SVGSVGElement>) {
+  const titleId = useId();
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-labelledby={titleId} {...props}>
+      <title id={titleId}>Menu</title>
+      <path
+        id="Vector"
+        d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
