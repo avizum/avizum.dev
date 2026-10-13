@@ -13,10 +13,11 @@ export function ThemeSwitch() {
   }, []);
 
   useEffect(() => {
+    if (!mounted) return;
     if (theme && systemTheme && theme !== "system" && theme === systemTheme) {
       setTheme("system");
     }
-  }, [theme, systemTheme, setTheme]);
+  }, [mounted, theme, systemTheme, setTheme]);
 
   if (!mounted) {
     return null;
