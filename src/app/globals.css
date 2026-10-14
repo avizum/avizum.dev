@@ -524,21 +524,28 @@ code {
   width: 2rem;
 }
 
-table {
-  border-collapse: collapse;
-  border-radius: 1rem;
+.project-table {
+  border: 1px solid var(--text-secondary);
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
-th {
+.project-table table {
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+.project-table th {
   background-color: var(--background-alt);
 }
 
-th,
-td {
+.project-table th,
+.project-table td {
   padding: 0.5rem 1rem;
+
   border: 1px solid var(--text-secondary);
 }
 
-tr:nth-child(even) {
+.project-table tr:nth-child(even) {
   background-color: var(--background-alt);
 }

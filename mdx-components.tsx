@@ -20,6 +20,13 @@ function MDXLink({ href, children, ...props }: React.ComponentPropsWithoutRef<"a
 
 const components: MDXComponents = {
   a: MDXLink,
+  table: ({ children, ...props }) => {
+    return (
+      <div className="project-table">
+        <table {...props}>{children}</table>
+      </div>
+    );
+  },
 };
 
 export function useMDXComponents(): MDXComponents {
