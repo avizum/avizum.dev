@@ -466,6 +466,51 @@ code {
   margin: 0;
 }
 
+.anchor-link {
+  opacity: 0;
+  margin-left: 0.2em;
+  transition: opacity 0.2s ease;
+}
+
+.anchor-link,
+.anchor-link * {
+  color: inherit;
+}
+
+.anchor-link:hover {
+  color: inherit;
+}
+
+.anchor-link svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+:is(h1, h2, h3, h4, h5, h6):hover .anchor-link,
+.anchor-link:focus-visible {
+  opacity: 0.4;
+}
+
+@media (hover: none) {
+  .anchor-link {
+    opacity: 0.4;
+  }
+}
+
+.external-link,
+.external-link * {
+  color: inherit;
+}
+
+.external-link {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.1em;
+}
+
 .project-links {
   margin: 1rem 0;
 }

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"],
+    rehypePlugins: ["rehype-slug", ["rehype-autolink-headings", {behavior: "append", properties: {className: "anchor-link"}}]],
   },
 });
 
