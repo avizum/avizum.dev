@@ -16,10 +16,21 @@
   --background: #fbfbfb;
   --background-alt: #efeeee;
   --text: #2e2e2e;
-  --text-secondary: #313131;
+  --text-secondary: #2e2e2ea6;
   --accent: #6f7688;
   --secondary: #6e7181;
   --hyperlink: #668985;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--background);
 }
 
 html * {
@@ -52,9 +63,11 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover,
-.should-hover:hover {
-  color: color-mix(in srgb, var(--hyperlink), #000 20%);
+@media (hover: hover) {
+  a:hover,
+  .should-hover:hover {
+    color: color-mix(in srgb, var(--hyperlink), #000 20%);
+  }
 }
 
 h1,
@@ -187,17 +200,19 @@ code {
   }
 }
 
-.navigation-items a:hover {
-  filter: brightness(1.2);
-  text-decoration: underline;
-}
-.navigation-button:hover {
-  filter: brightness(1.2);
-}
+@media (hover: hover) {
+  .navigation-items a:hover {
+    filter: brightness(1.2);
+    text-decoration: underline;
+  }
+  .navigation-button:hover {
+    filter: brightness(1.2);
+  }
 
-[data-theme="light"] .navigation-items a:hover,
-[data-theme="light"] .navigation-button:hover {
-  filter: brightness(0.8);
+  [data-theme="light"] .navigation-items a:hover,
+  [data-theme="light"] .navigation-button:hover {
+    filter: brightness(0.8);
+  }
 }
 
 .navigation-button {
@@ -235,11 +250,18 @@ code {
 
 @media (max-width: 950px) {
   .content {
-    width: 85vw;
+    width: 100%;
   }
 }
 
-.not-found {
+.footer {
+  text-align: center;
+  font-size: smaller;
+  border-top: 0.1rem solid var(--background-alt);
+}
+
+.not-found,
+.no-projects {
   padding: 0.1rem 1rem;
   margin: 20vh 0;
   display: flex;
@@ -253,13 +275,8 @@ code {
   background-color: color-mix(in srgb, var(--background), #000 25%);
 }
 
-.footer {
-  text-align: center;
-  font-size: smaller;
-  border-top: 0.1rem solid var(--background-alt);
-}
-
 .split .left-sidebar {
+  flex: 0 0 var(--left-sidebar-width);
   overflow-y: auto;
   height: calc(100vh - var(--navigation-height));
   position: sticky;
@@ -268,7 +285,6 @@ code {
 
 .left-sidebar,
 .project {
-  scrollbar-width: thin;
   padding-right: 0.75rem;
 }
 
@@ -278,7 +294,8 @@ code {
 }
 
 .project {
-  width: calc(100% - var(--left-sidebar-width));
+  flex: 1;
+  min-width: 0;
   margin-bottom: 1.5rem;
 }
 
@@ -288,14 +305,6 @@ code {
 
 .split:has(.no-projects) .project {
   margin: auto;
-}
-
-.no-projects {
-  padding: 0.1rem 1rem;
-  margin: 20vh 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 @media (max-width: 800px) {
@@ -331,12 +340,6 @@ code {
 .unlisted-notice p {
   font-size: 0.75rem;
   margin: 0;
-}
-
-.project-logo-name {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 
 .projects-container {
@@ -389,10 +392,6 @@ code {
   }
 }
 
-.split .left-sidebar {
-  flex: 0 0 var(--left-sidebar-width);
-}
-
 @media (max-width: 800px) {
   .split .left-sidebar {
     display: none;
@@ -406,14 +405,6 @@ code {
   gap: 1rem;
 }
 
-.project-card.current {
-  background-color: var(--background-alt);
-  transition: background-color 0.3s ease;
-}
-.project-card.current:hover {
-  background-color: color-mix(in srgb, var(--background-alt), #000 3%);
-}
-
 .project-card {
   display: block;
   border: 0.2rem solid var(--background-alt);
@@ -423,8 +414,18 @@ code {
   transition: background-color 0.3s ease;
 }
 
-.project-card:hover {
-  background-color: color-mix(in srgb, var(--background), #000 5%);
+.project-card.current {
+  background-color: var(--background-alt);
+}
+
+@media (hover: hover) {
+  .project-card:hover {
+    background-color: color-mix(in srgb, var(--background), #000 5%);
+  }
+
+  .project-card.current:hover {
+    background-color: color-mix(in srgb, var(--background-alt), #000 3%);
+  }
 }
 
 @media (max-width: 600px) {
