@@ -88,9 +88,12 @@ code {
 
 .navigation {
   background-color: var(--background);
-  border-bottom: 0.1rem solid var(--background-alt);
+  border: 0.1rem solid var(--background-alt);
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.25rem;
   position: sticky;
-  top: 0;
+  top: 0.5rem;
   z-index: 100;
 }
 
@@ -175,11 +178,10 @@ code {
     width: max-content;
     background-color: var(--background);
     border: 0.1rem solid var(--background-alt);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
     flex-direction: column;
     align-items: stretch;
-    transition:
-      opacity 0.2s ease,
-      visibility 0.2s ease;
   }
 
   .navigation-items li {
@@ -197,6 +199,9 @@ code {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
   }
 }
 
