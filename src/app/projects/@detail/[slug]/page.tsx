@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     return (
       <div className="project">
         <Link className="project-back" href="/projects">
-          <ArrowLeft className="should-hover" /> Back to Projects
+          <ArrowLeft /> Back to Projects
         </Link>
         <div className="project-header">
           <h1 className="title">{project.title}</h1>

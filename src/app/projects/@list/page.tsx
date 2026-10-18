@@ -20,7 +20,7 @@ export default async function ProjectsPage() {
         <h1 className="title">My Projects</h1>
         <p>Here's what I've been working on.</p>
         <Link className="project-back" href="/projects">
-          <ArrowLeft className="should-hover" /> View all Projects
+          <ArrowLeft /> View all Projects
         </Link>
         <ProjectsMasonry projects={listedProjects} />
       </div>

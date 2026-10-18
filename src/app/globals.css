@@ -64,8 +64,7 @@ a {
 }
 
 @media (hover: hover) {
-  a:hover,
-  .should-hover:hover {
+  a:hover {
     color: color-mix(in srgb, var(--hyperlink), #000 20%);
   }
 }
@@ -222,16 +221,12 @@ code {
 
 .navigation-button {
   color: var(--hyperlink);
-  border-radius: 0.5rem;
   background: none;
   border: none;
-  font: inherit;
-  font-weight: inherit;
-  letter-spacing: inherit;
   cursor: pointer;
-  transition: filter 0.3s ease;
   height: 2.5rem;
   width: 2.5rem;
+  transition: filter 0.3s ease;
 }
 
 .navigation-button svg {
@@ -374,7 +369,17 @@ code {
 .project-back svg {
   width: 1.5rem;
   height: 1.5rem;
-  stroke: var(--hyperlink);
+  transition: transform 0.2s ease;
+}
+.project-back svg,
+.project-back svg * {
+  color: inherit;
+}
+
+@media (hover: hover) {
+  .project-back:hover svg {
+    transform: translateX(-0.15em);
+  }
 }
 
 .single .project-back {
