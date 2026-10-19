@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
-import { getAllProjects, importProject } from "../../projects";
-import { GitHubIcon, DiscordIcon, TopGGIcon } from "@/components/Icons";
-import Link from "next/link";
+import { getAllProjects, importProject, linksMap } from "../../projects";
 import { ArrowLeft } from "@/components/Icons";
+import Link from "next/link";
 
 import type { Metadata } from "next";
+import type { Links } from "../../projects";
 
 export async function generateStaticParams() {
   const projects = await getAllProjects();
@@ -34,6 +34,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   try {
     const { Content, project } = await importProject(slug);
+
+    const keys = Object.keys(linksMap) as (keyof Links)[];
+    const populatedLinks: Array<{ key: keyof Links; url: string }> = [];
+
+    for (const key of keys) {
+      const url = project.links?.[key];
+      if (url) {
+        populatedLinks.push({ key, url });
+      }
+    }
+
     return (
       <div className="project">
         <Link className="project-back" href="/projects">
@@ -50,30 +61,26 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
         )}
 
-        {project.links && (
+        {populatedLinks.length > 0 && (
           <div className="project-links">
-            {project.links.github && (
-              <a href={project.links.github} target="_blank" rel="noreferrer noopener">
-                <GitHubIcon />
-              </a>
-            )}
-            {project.links.discordInvite && (
-              <a href={project.links.discordInvite} target="_blank" rel="noreferrer noopener">
-                <DiscordIcon />
-              </a>
-            )}
-            {project.links.topgg && (
-              <a href={project.links.topgg} target="_blank" rel="noreferrer noopener">
-                <TopGGIcon />
-              </a>
-            )}
+            <h4>Project Links</h4>
+            {populatedLinks.map((item) => {
+              const { label, icon: Icon } = linksMap[item.key];
+              return (
+                <a key={item.key} href={item.url} target="_blank" rel="noreferrer noopener">
+                  <Icon className="project-link-icon" aria-hidden="true" />
+                  {label}
+                </a>
+              );
+            })}
           </div>
         )}
         <hr />
         <Content />
       </div>
     );
-  } catch {
+  } catch (error) {
+    console.error(error);
     notFound();
   }
 }

@@ -2,13 +2,28 @@ import fs from "fs";
 import path from "path";
 import { JSX } from "react/jsx-runtime";
 
+import { GitHubIcon, TopGGIcon, DiscordIcon, PyPiIcon, ReadTheDocsIcon } from "@/components/Icons";
+
 const CONTENT_DIR = path.join(process.cwd(), "src/content/projects");
 
-interface Links {
+export interface Links {
   github?: string;
   topgg?: string;
   discordInvite?: string;
+  pypi?: string;
+  docs?: string;
 }
+
+export const linksMap: Record<
+  keyof Links,
+  { label: string; icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }
+> = {
+  github: { label: "GitHub Repository", icon: GitHubIcon },
+  topgg: { label: "Top.gg Page", icon: TopGGIcon },
+  discordInvite: { label: "Discord Server", icon: DiscordIcon },
+  pypi: { label: "PyPi Page", icon: PyPiIcon },
+  docs: { label: "Documentation", icon: ReadTheDocsIcon },
+};
 
 export interface ProjectSummary {
   slug: string;
