@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { ViewTransition } from "react";
 
 export function ProjectView({ list, detail }: { list: React.ReactNode; detail: React.ReactNode }) {
   const pathName = usePathname();
@@ -10,12 +9,10 @@ export function ProjectView({ list, detail }: { list: React.ReactNode; detail: R
     return <div className="single">{list}</div>;
   } else {
     return (
-      <ViewTransition>
-        <div className="split">
-          {list}
-          {detail}
-        </div>
-      </ViewTransition>
+      <div className="split">
+        {list}
+        {detail}
+      </div>
     );
   }
 }
