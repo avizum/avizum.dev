@@ -2,7 +2,7 @@
 
 import { useLayoutEffect, useState, useEffect, useRef } from "react";
 import { ThemeSwitch } from "./ThemeSwitch";
-import { Hamburger, Close } from "./Icons";
+import { Hamburger, Close, LogoDark, LogoLight } from "./Icons";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -29,22 +29,9 @@ export function Navigation() {
     <nav className="navigation" aria-label="Main">
       <div className="navigation-container">
         <Link className="logo-home" href="/">
-          <Image
-            loading="eager"
-            className="dark wordmark"
-            src="/dark-wordmark.png"
-            alt="avizum.dev"
-            width={400}
-            height={120}
-          />
-          <Image
-            loading="eager"
-            className="light wordmark"
-            src="/light-wordmark.png"
-            alt="avizum.dev"
-            width={400}
-            height={120}
-          />
+          <LogoDark className="dark icon" />
+          <LogoLight className="light icon" />
+          avizum.dev
         </Link>
         <div className="navigation-actions">
           <ul

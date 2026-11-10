@@ -152,3 +152,29 @@ export function Anchor(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function LogoLight(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 100 120" fill="none" aria-hidden="true" {...props}>
+      <rect width="100" height="120" rx="10" fill="#FBFBFB" />
+      <rect x="10" y="10" width="80" height="100" rx="5" fill="#EFEEEE" />
+      <path
+        d="M28.8 89L43.52 30.6H56.4L71.2 89H60.96L57.76 74.84H42.24L39.04 89H28.8ZM44.08 66.68H55.92L52.4 51C51.8133 48.3867 51.3067 46.04 50.88 43.96C50.4533 41.8267 50.16 40.28 50 39.32C49.84 40.28 49.5467 41.8267 49.12 43.96C48.7467 46.04 48.24 48.36 47.6 50.92L44.08 66.68Z"
+        fill="#2E2E2E"
+      />
+    </svg>
+  );
+}
+
+export function LogoDark(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 100 120" fill="none" aria-hidden="true" {...props}>
+      <rect width="100" height="120" rx="10" fill="#1F363D" />
+      <rect x="10" y="10" width="80" height="100" rx="5" fill="#2A4047" />
+      <path
+        d="M28.8 89L43.52 30.6H56.4L71.2 89H60.96L57.76 74.84H42.24L39.04 89H28.8ZM44.08 66.68H55.92L52.4 51C51.8133 48.3867 51.3067 46.04 50.88 43.96C50.4533 41.8267 50.16 40.28 50 39.32C49.84 40.28 49.5467 41.8267 49.12 43.96C48.7467 46.04 48.24 48.36 47.6 50.92L44.08 66.68Z"
+        fill="#FEF5EF"
+      />
+    </svg>
+  );
+}

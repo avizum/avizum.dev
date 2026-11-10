@@ -99,23 +99,30 @@ code {
 .logo-home {
   margin-left: 0.25rem;
   display: flex;
+  gap: 0.25rem;
   align-items: center;
+  font-family: var(--font-jetBrainsMono), Consolas, Menlo, "Courier New", monospace;
+  color: var(--text);
+  font-size: 0.85rem;
 }
 
-.wordmark {
-  height: 36px;
-  width: 120px;
+.logo-home:hover {
+  color: var(--text);
 }
 
-.light.wordmark {
+.logo-home .icon {
+  width: 1.75rem;
+}
+
+.light.icon {
   display: none;
 }
 
-[data-theme="light"] .light.wordmark {
+[data-theme="light"] .light.icon {
   display: block;
 }
 
-[data-theme="light"] .dark.wordmark {
+[data-theme="light"] .dark.icon {
   display: none;
 }
 
