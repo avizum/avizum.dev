@@ -8,12 +8,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div id="home">
-      <h1 className="title">Home</h1>
+      <h1 className="title">avizum.dev</h1>
+      <p>Hello. avizum here, welcome.</p>
       <p>
-        Hello, welcome to my website. <Link href="/about">About Me</Link>
-      </p>
-      <p>
-        Check out what I've been working on: <Link href="/projects">My Projects</Link>
+        <Link href="/about">About Me</Link> | <Link href="/projects">My Projects</Link>
       </p>
     </div>
   );

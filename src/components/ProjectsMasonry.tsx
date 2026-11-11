@@ -2,7 +2,7 @@
 
 import Masonry from "react-masonry-css";
 import Link from "next/link";
-import { ProjectSummary } from "@/app/projects/projects";
+import { ProjectSummary } from "@/app/(main)/projects/projects";
 import { MasonryProps } from "react-masonry-css";
 import { usePathname } from "next/navigation";
 
