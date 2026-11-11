@@ -1,3 +1,4 @@
+import { ThemeProvider } from "next-themes";
 import { vendSans, jetBrainsMono } from "./fonts";
 
 import "./globals.css";
@@ -10,7 +11,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      {children}
+      <body>
+        <ThemeProvider disableTransitionOnChange>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -7,13 +7,13 @@ export const metadata: Metadata = {
 
 export default function notFound() {
   return (
-    <body>
+    <>
       <Navigation />
       <div className="not-found">
         <h1>404 | Not Found</h1>
         <p>Sorry, the page you're looking for could not be found, or does not exist anymore.</p>
         <Link href="/">Go Home</Link>
       </div>
-    </body>
+    </>
   );
 }
