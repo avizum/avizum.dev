@@ -9,7 +9,10 @@ export default function Privacy() {
     <div className="legal">
       <div className="legal-header">
         <h1 className="title">Privacy Policy for Alpine Bot</h1>
-        <p className="legal-date">Last Updated: 2026-11-11</p>
+        <div className="legal-date">
+          <p>Effective: 2026-11-15</p>
+          <p>Last Updated: 2026-11-13</p>
+        </div>
       </div>
       <hr />
       <p>
@@ -150,7 +153,6 @@ export default function Privacy() {
         <li>
           Email: <a href="mailto:me@avizum.dev">me@avizum.dev</a>
         </li>
-        <li>Sending a Direct Message to the Bot through Discord</li>
       </ul>
     </div>
   );

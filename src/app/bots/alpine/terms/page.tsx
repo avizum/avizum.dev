@@ -12,9 +12,10 @@ export default function Terms() {
         <h1 className="title">Terms of Service for Alpine Bot</h1>
         <div className="legal-date">
           <p>Effective: 2026-11-15</p>
-          <p>Last Updated: 2026-11-11</p>
+          <p>Last Updated: 2026-11-13</p>
         </div>
       </div>
+      <hr />
       <p>
         These Terms of Service (the "Terms") govern your access to and use of Alpine (The "Bot,"
         "Application," or "App") an Application on Discord, operated by avizum ("we," "us," or
@@ -150,7 +151,6 @@ export default function Terms() {
         <li>
           Email: <a href="mailto:me@avizum.dev">me@avizum.dev</a>
         </li>
-        <li>Sending a Direct Message to the Bot through Discord</li>
       </ul>
     </div>
   );
